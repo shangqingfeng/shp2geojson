@@ -4,14 +4,18 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/jonas-p/go-shp"
-	"github.com/paulmach/go.geojson"
+	geojson "github.com/paulmach/go.geojson"
+	"github.com/shangqingfeng/go-shp"
 )
+
+func Convert(input string) ([]byte, error) {
+	return ConvertWithEncoding(input, "utf-8")
+}
 
 // Convert shapefile to geojson
 // currently not support Multi Geometry
-func Convert(input string) ([]byte, error) {
-	shape, err := shp.Open(input)
+func ConvertWithEncoding(input string, encoding string) ([]byte, error) {
+	shape, err := shp.OpenWithEncoding(input, encoding)
 	if err != nil {
 		return nil, err
 	}
