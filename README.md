@@ -1,6 +1,6 @@
 # shp2geojson
 Shapefile to geojson converter
-## Insert 
+## Install
 ```shell
 go get github.com/shangqingfeng/shp2geojson
 ```

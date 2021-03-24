@@ -11,7 +11,7 @@ func TestGBK(t *testing.T) {
 	data := "data/GBKTest.shp"
 	jsonStr, err := ConvertWithEncoding(data, "GBK")
 	assert.Equal(t, err, nil)
-	json := string(jsonStr)
+	//json := string(jsonStr)
 	err = ioutil.WriteFile("./gbktest.geojson", jsonStr, 0644)
 	assert.Equal(t, err, nil)
 }
