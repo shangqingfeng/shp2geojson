@@ -7,6 +7,15 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestMultiPolygon(t *testing.T) {
+	data := "D:\\temp\\MultiPolygon.shp"
+	jsonStr, err := ConvertWithEncoding(data, "utf-8")
+	assert.Equal(t, err, nil)
+	//json := string(jsonStr)
+	err = ioutil.WriteFile("./MultiPolygon.geojson", jsonStr, 0644)
+	assert.Equal(t, err, nil)
+}
+
 func TestGBK(t *testing.T) {
 	data := "data/GBKTest.shp"
 	jsonStr, err := ConvertWithEncoding(data, "GBK")
